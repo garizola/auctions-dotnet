@@ -8,11 +8,9 @@ namespace Auctions.Data;
 
 public class ApplicationDbContext : IdentityDbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IHttpContextAccessor accessor)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
-        var conn = Database.GetDbConnection() as SqlConnection;
-        conn.AccessToken = accessor.HttpContext.Request.Headers["X-MS-TOKEN-AAD-ACCESS-TOKEN"];
     }
 
     public DbSet<Listing> Listings { get; set; }
