@@ -24,7 +24,7 @@ body {
 }
 
 .nav {
-    background-color: rgba(138, 129, 120, 0.6);
+    background-color: #394d3e;
     border: 1px solid black;
 }
 
@@ -32,6 +32,50 @@ body {
     color: black;
 }
 
-    .nav-link:hover {
+.nav-link:hover {
         color: white;
+    }
+
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+        .navbar-toggler.collapsed + .navbar-collapse {
+            display: none;
+        }
+
+        .navbar-toggler:not(.collapsed) + .navbar-collapse {
+            display: block;
+        }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-nav {
+        margin: 0;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(0,0,0,0.5)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E');
+    height: 20px;
+    width: 20px;
+}
+
+.form-control {
+    width: 100%; /* Adjusted from 80% to be full width */
+    float: none; /* Removed float */
+    margin-bottom: 10px; /* Add space below the search bar */
+}
+
+    .form-control + button {
+        width: 100%; /* Adjusted to be full width */
+        margin-top: -1px; /* Align with the input */
     }
